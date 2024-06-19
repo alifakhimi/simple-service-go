@@ -1,0 +1,29 @@
+{
+  "name": "sample simple service",
+  "version": "2.0.1",
+  "description": "sample service",
+  "website": "https://sample.com",
+  "http_servers": {
+    "zarinpal": {
+      "address": ":80",
+      "prefix": "/api/v1",
+      "debug": true
+    }
+  },
+  "meta": {
+    "expire_in": "15m",
+    "payment_url": "https://www.sample.com/pg/StartPay"
+  },
+  "banners": [
+    {
+      "text": "SIKA",
+      "font": "small",
+      "color": "blue"
+    },
+    {
+      "text": "Zarinpal",
+      "font": "small",
+      "color": "yellow"
+    }
+  ]
+}

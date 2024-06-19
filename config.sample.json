@@ -1,0 +1,29 @@
+{
+  "name": "simple service name",
+  "version": "2.0.1",
+  "description": "simple service description",
+  "website": "https://example.com",
+  "http_servers": {
+    "ipg": {
+      "address": ":80",
+      "prefix": "/api/v1",
+      "debug": true
+    }
+  },
+  "meta": {
+    "expire_in": "15m",
+    "payment_url": "https://www.ipg.com/payment_url"
+  },
+  "banners": [
+    {
+      "text": "::| COMPANY NAME |::",
+      "font": "small",
+      "color": "blue"
+    },
+    {
+      "text": "*** simple service name ***",
+      "font": "small",
+      "color": "yellow"
+    }
+  ]
+}
