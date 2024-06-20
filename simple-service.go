@@ -5,9 +5,8 @@ import (
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
 
-	"github.com/alifakhimi/simple-service-go/database/connection"
-	"github.com/alifakhimi/simple-service-go/utils/httpserver"
-	"github.com/alifakhimi/simple-service-go/utils/rest"
+	simutils "github.com/alifakhimi/simple-utils-go"
+	"github.com/alifakhimi/simple-utils-go/simrest"
 )
 
 var ()
@@ -41,7 +40,7 @@ func NewWithConfig(conf *Config) Simple {
 	}
 }
 
-func (s *Service) GetHttpServer(name string) (h *httpserver.HttpServer, err error) {
+func (s *Service) GetHttpServer(name string) (h *simutils.HttpServer, err error) {
 	return s.Config.GetHttpServer(name)
 }
 
@@ -49,7 +48,7 @@ func (s *Service) GetHttp(name string) (ech *echo.Echo, err error) {
 	return s.Config.GetHttpServerEcho(name)
 }
 
-func (s *Service) GetClient(name string) (client *rest.Client, err error) {
+func (s *Service) GetClient(name string) (client *simrest.Client, err error) {
 	return s.Config.GetClient(name)
 }
 
@@ -57,7 +56,7 @@ func (s *Service) GetRestyClient(name string) (client *resty.Client, err error) 
 	return s.Config.GetRestyClient(name)
 }
 
-func (s *Service) GetDB(name string) (db *connection.DBConnection, err error) {
+func (s *Service) GetDB(name string) (db *simutils.DBConnection, err error) {
 	return s.Config.GetDB(name)
 }
 

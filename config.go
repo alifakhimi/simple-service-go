@@ -4,15 +4,13 @@ import (
 	"encoding/json"
 	"errors"
 
+	simutils "github.com/alifakhimi/simple-utils-go"
+	"github.com/alifakhimi/simple-utils-go/simrest"
 	"github.com/go-resty/resty/v2"
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"gorm.io/gorm"
-
-	"github.com/alifakhimi/simple-service-go/database/connection"
-	"github.com/alifakhimi/simple-service-go/utils/httpserver"
-	"github.com/alifakhimi/simple-service-go/utils/rest"
 )
 
 // error block
@@ -35,11 +33,11 @@ type (
 		// Website
 		Website string `json:"website,omitempty"`
 		// Address optionally specifies the TCP address for the server to listen on,
-		HttpServers httpserver.HttpServers `json:"http_servers,omitempty"`
+		HttpServers simutils.HttpServers `json:"http_servers,omitempty"`
 		// Clients is a list of rest client
-		Clients rest.Clients `json:"clients,omitempty"`
+		Clients simrest.Clients `json:"clients,omitempty"`
 		// Databases is a list of database connection
-		Databases connection.DBs `json:"databases,omitempty"`
+		Databases simutils.DBs `json:"databases,omitempty"`
 		// Meta
 		Meta any `json:"meta,omitempty"`
 		// Banner will be displayed when the service starts
@@ -57,9 +55,9 @@ type (
 
 func NewConfig(path ...string) *Config {
 	c := Config{
-		HttpServers: httpserver.HttpServers{},
-		Clients:     rest.Clients{},
-		Databases:   connection.DBs{},
+		HttpServers: simutils.HttpServers{},
+		Clients:     simrest.Clients{},
+		Databases:   simutils.DBs{},
 	}
 
 	if len(path) > 0 && path[0] != "" {
@@ -71,7 +69,7 @@ func NewConfig(path ...string) *Config {
 	return &c
 }
 
-func (conf *Config) GetHttpServer(name string) (h *httpserver.HttpServer, err error) {
+func (conf *Config) GetHttpServer(name string) (h *simutils.HttpServer, err error) {
 	if len(conf.HttpServers) == 0 {
 		return nil, ErrHttpServerNotFound
 	}
@@ -91,7 +89,7 @@ func (conf *Config) GetHttpServerEcho(name string) (ech *echo.Echo, err error) {
 	}
 }
 
-func (conf *Config) GetClient(name string) (client *rest.Client, err error) {
+func (conf *Config) GetClient(name string) (client *simrest.Client, err error) {
 	if len(conf.Clients) == 0 {
 		return nil, ErrClientNotFound
 	}
@@ -111,7 +109,7 @@ func (conf *Config) GetRestyClient(name string) (client *resty.Client, err error
 	}
 }
 
-func (conf *Config) GetDB(name string) (db *connection.DBConnection, err error) {
+func (conf *Config) GetDB(name string) (db *simutils.DBConnection, err error) {
 	if len(conf.Databases) == 0 {
 		return nil, ErrDBConnNotFound
 	}

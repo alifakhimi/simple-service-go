@@ -4,12 +4,11 @@ import (
 	"fmt"
 	"testing"
 
+	simutils "github.com/alifakhimi/simple-utils-go"
+	"github.com/alifakhimi/simple-utils-go/simrest"
 	"github.com/spf13/viper"
 
 	"github.com/alifakhimi/simple-service-go"
-	"github.com/alifakhimi/simple-service-go/database/connection"
-	"github.com/alifakhimi/simple-service-go/utils/httpserver"
-	"github.com/alifakhimi/simple-service-go/utils/rest"
 )
 
 type testSvc struct {
@@ -48,17 +47,17 @@ func TestService_Run(t *testing.T) {
 					Version:     "1.0.0",
 					Description: "Test Desc",
 					Website:     "https://example.com",
-					HttpServers: map[string]*httpserver.HttpServer{
+					HttpServers: map[string]*simutils.HttpServer{
 						"test": {
-							HttpServerConfig: httpserver.HttpServerConfig{
+							HttpServerConfig: simutils.HttpServerConfig{
 								Address: ":8080",
 								Prefix:  "/api/v1",
 								Debug:   true,
 							},
 						},
 					},
-					Clients:   rest.Clients{},
-					Databases: connection.DBs{},
+					Clients:   simrest.Clients{},
+					Databases: simutils.DBs{},
 					Meta:      nil,
 					Banners: []*simple.Banner{
 						{

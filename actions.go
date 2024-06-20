@@ -4,9 +4,8 @@ import (
 	"errors"
 	"fmt"
 
+	simutils "github.com/alifakhimi/simple-utils-go"
 	"github.com/common-nighthawk/go-figure"
-
-	"github.com/alifakhimi/simple-service-go/database/connection"
 )
 
 // Run starts Service
@@ -27,7 +26,7 @@ func (s *Service) Run(svc Interface) Simple {
 	}
 
 	// Connect to databases
-	if err := connection.ConnectDBs(s.Config.Databases); err != nil {
+	if err := simutils.ConnectDBs(s.Config.Databases); err != nil {
 		s.err = errors.Join(s.err, err)
 		return s
 	}
