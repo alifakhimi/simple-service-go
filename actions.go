@@ -10,10 +10,6 @@ import (
 
 // Run starts Service
 func (s *Service) Run(svc Interface) Simple {
-	// if sss, ok := svc.(*Service); ok {
-	// 	_ = sss
-	// }
-
 	// Print banners
 	for _, b := range s.Config.Banners {
 		figure.NewColorFigure(b.Text, b.Font, b.Color, true).Print()
