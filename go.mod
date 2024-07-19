@@ -2,13 +2,9 @@ module github.com/alifakhimi/simple-service-go
 
 go 1.22.3
 
-require (
-	github.com/alifakhimi/simple-utils-go v0.0.3
-)
+require gorm.io/driver/mysql v1.5.7 // indirect
 
-require (
-	gorm.io/driver/mysql v1.5.7 // indirect
-)
+require github.com/alifakhimi/simple-utils-go v0.0.4
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
