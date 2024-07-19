@@ -3,7 +3,10 @@ module github.com/alifakhimi/simple-service-go
 go 1.22.3
 
 require (
-	github.com/alifakhimi/simple-utils-go v0.0.2
+	github.com/alifakhimi/simple-utils-go v0.0.3
+)
+
+require (
 	gorm.io/driver/mysql v1.5.7 // indirect
 )
 
@@ -50,7 +53,7 @@ require (
 	github.com/valyala/fasttemplate v1.2.2 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.25.0 // indirect
-	golang.org/x/exp v0.0.0-20240707233637-46b078467d37 // indirect
+	golang.org/x/exp v0.0.0-20240716175740-e3f259677ff7 // indirect
 	golang.org/x/net v0.27.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
 	golang.org/x/sys v0.22.0 // indirect
@@ -64,7 +67,7 @@ require (
 )
 
 require (
-	github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20240712132127-f941b8831d06
+	github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20240719124859-4ae86506f79e
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/go-resty/resty/v2 v2.13.1
