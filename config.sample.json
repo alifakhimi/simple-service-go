@@ -3,6 +3,24 @@
   "version": "2.0.1",
   "description": "simple service description",
   "website": "https://example.com",
+  "logger": {
+    "formatter": {
+      "use": "json",
+      "json": {
+        "timestamp_format": "2006-01-02T15:04:05Z07:00",
+        "disable_timestamp": false,
+        "disable_html_escape": false,
+        "data_key": "",
+        "pretty_print": false
+      },
+      "text": {}
+    },
+    "level": "warn",
+    "output": {
+      "type": "file",
+      "path": "logs/simsvc.log"
+    }
+  },
   "http_servers": {
     "ipg": {
       "address": ":80",

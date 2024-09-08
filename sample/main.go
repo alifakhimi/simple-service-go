@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/alifakhimi/simple-service-go"
+	"github.com/sirupsen/logrus"
 )
 
 type sampleSvc struct {
@@ -28,12 +28,12 @@ func main() {
 	)
 
 	if svc, ok := newService().(*sampleSvc); !ok {
-		log.Fatalln("error implementation")
+		logrus.Fatalln("error implementation")
 	} else {
 		service = svc
 	}
 
 	if err := service.Simple.Run(service); err != nil {
-		log.Fatalln(err)
+		logrus.Fatalln(err)
 	}
 }

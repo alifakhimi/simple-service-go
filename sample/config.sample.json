@@ -1,10 +1,28 @@
 {
-  "name": "sample simple service",
+  "name": "sample simple service name",
   "version": "2.0.1",
-  "description": "sample service",
-  "website": "https://sample.com",
+  "description": "sample simple service description",
+  "website": "https://example.com",
+  "logger": {
+    "formatter": {
+      "use": "json",
+      "json": {
+        "timestamp_format": "2006-01-02T15:04:05Z07:00",
+        "disable_timestamp": false,
+        "disable_html_escape": false,
+        "data_key": "",
+        "pretty_print": false
+      },
+      "text": {}
+    },
+    "level": "info",
+    "output": {
+      "type": "file",
+      "path": "logs/simsvc.log.json"
+    }
+  },
   "http_servers": {
-    "zarinpal": {
+    "ipg": {
       "address": ":80",
       "prefix": "/api/v1",
       "debug": true
@@ -12,16 +30,16 @@
   },
   "meta": {
     "expire_in": "15m",
-    "payment_url": "https://www.sample.com/pg/StartPay"
+    "payment_url": "https://www.ipg.com/payment_url"
   },
   "banners": [
     {
-      "text": "SIKA",
+      "text": "::| COMPANY |::",
       "font": "small",
       "color": "blue"
     },
     {
-      "text": "Zarinpal",
+      "text": "*** Simple Service ***",
       "font": "small",
       "color": "yellow"
     }
