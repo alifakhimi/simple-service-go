@@ -5,6 +5,8 @@ import (
 	"errors"
 	"os"
 	"runtime"
+	"strings"
+	"time"
 
 	simutils "github.com/alifakhimi/simple-utils-go"
 	"github.com/alifakhimi/simple-utils-go/simrest"
@@ -206,10 +208,11 @@ func (l *Logger) UnmarshalJSON(data []byte) (err error) {
 
 	// Log Output
 	l.Output = cast.ToStringMap(loggerMap["output"])
+	logPath := strings.Replace(l.Output["path"].(string), "{{now}}", time.Now().Format(time.RFC3339), -1)
 
 	switch l.Output["type"] {
 	case "file":
-		if f, err := simutils.CreateFile(l.Output["path"].(string)); err != nil {
+		if f, err := simutils.CreateFile(logPath); err != nil {
 			return err
 		} else {
 			logrus.SetOutput(f)
