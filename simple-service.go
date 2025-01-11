@@ -22,7 +22,7 @@ type (
 	}
 
 	Service struct {
-		*Config
+		*simutils.Config
 		// err returns errors
 		err error
 	}
@@ -30,11 +30,11 @@ type (
 
 func New(configPath string) Simple {
 	return &Service{
-		Config: NewConfig(configPath),
+		Config: simutils.NewConfig(configPath),
 	}
 }
 
-func NewWithConfig(conf *Config) Simple {
+func NewWithConfig(conf *simutils.Config) Simple {
 	return &Service{
 		Config: conf,
 	}

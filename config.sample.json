@@ -1,36 +1,89 @@
 {
   "name": "simple service name",
+  "display_name": "Example Service",
   "version": "2.0.1",
   "description": "simple service description",
   "website": "https://example.com",
+  "author": "https://github.com/example-service/",
+  "homepage": "https://example.com/example-service",
   "logger": {
+    "comment": "https://github.com/sirupsen/logrus",
     "formatter": {
+      "comment": "use: json | text",
       "use": "json",
       "json": {
         "timestamp_format": "2006-01-02T15:04:05Z07:00",
         "disable_timestamp": false,
         "disable_html_escape": false,
         "data_key": "",
-        "pretty_print": false
+        "pretty_print": true
       },
       "text": {}
     },
+    "level-comment": {
+      "panic": "[0] PanicLevel level, highest level of severity. Logs and then calls panic with the message passed to Debug, Info, ...",
+      "fatal": "[1] FatalLevel level. Logs and then calls `logger.Exit(1)`. It will exit even if the logging level is set to Panic.",
+      "error": "[2] ErrorLevel level. Logs. Used for errors that should definitely be noted. Commonly used for hooks to send errors to an error tracking service.",
+      "warn|warning": "[3] WarnLevel level. Non-critical entries that deserve eyes.",
+      "info": "[4] InfoLevel level. General operational entries about what's going on inside the application.",
+      "debug": "[5] DebugLevel level. Usually only enabled when debugging. Very verbose logging.",
+      "trace": "[6] TraceLevel level. Designates finer-grained informational events than the Debug."
+    },
     "level": "warn",
+    "output-comment": {
+      "type": {
+        "file": "local file system",
+        "unknown": "standard output"
+      }
+    },
     "output": {
       "type": "file",
-      "path": "logs/simsvc-{{now}}.log"
+      "path": "./logs/simsvc-{{now}}.log"
     }
   },
   "http_servers": {
-    "ipg": {
-      "address": ":80",
+    "main": {
+      "address": ":8000",
       "prefix": "/api/v1",
       "debug": true
     }
   },
+  "clients": {
+    "api": {
+      "base_url": "https://api.second.com/api/v1",
+      "proxy": "",
+      "token": "<jwt>",
+      "header": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "Accept": [
+          "application/json"
+        ]
+      },
+      "debug": false
+    }
+  },
+  "databases": {
+    "db": {
+      "driver": 3,
+      "dsn": "data.db",
+      "debug": false,
+      "logger": {
+        "colorful": true,
+        "log_level": 4
+      }
+    }
+  },
   "meta": {
-    "expire_in": "15m",
-    "payment_url": "https://www.ipg.com/payment_url"
+    "filters": {
+      "barcode_pattern": "^(?P<title>\\d+)(?:[\\.|_].*)?$",
+      "content_types": "image/.*"
+    },
+    "mock": {}
+  },
+  "banners-comment": {
+    "font_name": "http://www.figlet.org/fontdb.cgis"
   },
   "banners": [
     {

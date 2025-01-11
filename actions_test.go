@@ -28,7 +28,7 @@ func newService() simple.Interface {
 
 func TestService_Run(t *testing.T) {
 	type fields struct {
-		Config *simple.Config
+		Config *simutils.Config
 	}
 	type args struct {
 		svc simple.Interface
@@ -42,7 +42,7 @@ func TestService_Run(t *testing.T) {
 		{
 			name: "Run service",
 			fields: fields{
-				Config: &simple.Config{
+				Config: &simutils.Config{
 					Name:        "Test",
 					Version:     "1.0.0",
 					Description: "Test Desc",
@@ -59,7 +59,7 @@ func TestService_Run(t *testing.T) {
 					Clients:   simrest.Clients{},
 					Databases: simutils.DBs{},
 					Meta:      nil,
-					Banners: []*simple.Banner{
+					Banners: []*simutils.Banner{
 						{
 							Text:  "SIKA",
 							Font:  "mini",
