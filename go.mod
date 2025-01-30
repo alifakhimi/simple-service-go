@@ -4,7 +4,7 @@ go 1.22.3
 
 // replace github.com/alifakhimi/simple-utils-go => ../simple-utils-go
 
-require github.com/alifakhimi/simple-utils-go v0.0.14
+require github.com/alifakhimi/simple-utils-go v0.0.15
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
@@ -71,7 +71,7 @@ require (
 )
 
 require (
-	github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250129101757-569d856a55c8
+	github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250130143412-f9c06eeb7310
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/go-resty/resty/v2 v2.16.5

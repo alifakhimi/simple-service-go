@@ -27,10 +27,14 @@ github.com/alifakhimi/simple-utils-go v0.0.11 h1:I7WJ+e9GrwNkSuT87CvbSDblX+7rhOJ
 github.com/alifakhimi/simple-utils-go v0.0.11/go.mod h1:OoLebbCA66MJPYmByKaGIlIhRaUr1AvOcn2vESY7aQw=
 github.com/alifakhimi/simple-utils-go v0.0.14 h1:/TsZ/kPJZu16VCPzPU/GBhs3isdQR3inyJl6MwBA07w=
 github.com/alifakhimi/simple-utils-go v0.0.14/go.mod h1:+l+ZXNr2pREGiTB3NOxnXAeZwKRj4iiUzYaYSj2D5Jw=
+github.com/alifakhimi/simple-utils-go v0.0.15 h1:vbwsrezYbBzer+iliUtvPChQW3IdJTKHZNbOW/4FquA=
+github.com/alifakhimi/simple-utils-go v0.0.15/go.mod h1:+l+ZXNr2pREGiTB3NOxnXAeZwKRj4iiUzYaYSj2D5Jw=
 github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250111093450-7b857f45c884 h1:dTlKMwI29+vgvA9kLuF02gjHOWieSThIfkQjztmbEIQ=
 github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250111093450-7b857f45c884/go.mod h1:97PlaO48CeWJjK9B7y7F0zXGD6bU3yhRwMmTPnT5Lg4=
 github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250129101757-569d856a55c8 h1:afafj2tHw3cTv/wAeWVntb9dxrRzY4JLNtAXD+7qYgA=
 github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250129101757-569d856a55c8/go.mod h1:97PlaO48CeWJjK9B7y7F0zXGD6bU3yhRwMmTPnT5Lg4=
+github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250130143412-f9c06eeb7310 h1:A/ObZqFaIejxANsiQZ3FHy4XTZOflgMCKCNATGwWeLk=
+github.com/alifakhimi/simple-utils-go/simrest v0.0.0-20250130143412-f9c06eeb7310/go.mod h1:97PlaO48CeWJjK9B7y7F0zXGD6bU3yhRwMmTPnT5Lg4=
 github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 h1:DklsrG3dyBCFEj5IhUbnKptjxatkF07cF2ak3yi77so=
 github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2/go.mod h1:WaHUgvxTVq04UNunO+XhnAqY/wQc+bxr74GqbsZ/Jqw=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=
